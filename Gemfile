@@ -35,6 +35,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'clearance'
 #User authentication
 
+gem 'simple_form', '~> 3.4'
+#Used for forms
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
