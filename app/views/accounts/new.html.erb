@@ -5,7 +5,8 @@
                   <div class="panel-body">
                   <%= simple_form_for @account do |f| %>
                         <%= f.input :name %>
-                        <%= f.input :description %>
+                        <%= f.input :type %>
+                        <%= f.input :amount %>
       
                         <%= f.button :submit, class: 'btn btn-success' %>
                   <% end %> 

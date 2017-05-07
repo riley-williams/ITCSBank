@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+ 
+ .table-hover tbody tr:hover > th {
+  background-color: #FF5733;
+}
+
+.borderless td, .borderless th {
+    border: none;
+}

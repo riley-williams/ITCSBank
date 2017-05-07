@@ -1,16 +1,16 @@
 <div id="clearance" class="sign-up">
-  <h1>RIGHT HERE YEE</h1>
-  <h2><%= t(".title") %></h2>
-
-  <%= form_for @user do |form| %>
-    <%= render partial: '/users/form', object: form %>
-
-    <div class="submit-field">
-      <%= form.submit %>
-    </div>
-
-    <div class="other-links">
-      <%= link_to t(".sign_in"), sign_in_path %>
-    </div>
-  <% end %>
+  <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-primary">
+                  <div class="panel-heading">Create Account</div>
+                  <div class="panel-body">
+                    <%= simple_form_for @user do |f| %>
+                          <%= f.input :email %>
+                          <%= f.input :password %>
+        
+                          <%= f.button :submit, class: 'btn btn-success' %>
+                    <% end %> 
+                  </div>
+            </div> 
+      </div>
 </div>

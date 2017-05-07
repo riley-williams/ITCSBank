@@ -3,5 +3,6 @@ class Account < ApplicationRecord
     
     validates :user, presence: true
     validates :name, presence: true, uniqueness: {scope: :user_id}
-    validates :description, presence: true
+    validates :type, presence: true
+    validates :amount, presence: true
 end
