@@ -1,0 +1,18 @@
+<div id="clearance" class="sign-up">
+  <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+          <h3>Editing Transaction</h3>
+            <div class="panel panel-primary">
+                  <div class="panel-heading">Transaction</div>
+                  <div class="panel-body">
+                    <%= simple_form_for @account do |f| %>
+                          <%= f.input :name %>
+                          <%= f.input :description %>
+                          
+                          <%= f.button :submit, class: 'btn btn-success' %>
+                    <% end %> 
+                  </div>
+            </div>
+            <%= link_to 'Back', account_path, class: 'btn btn-primary btn-sm' %>
+      </div>
+</div>

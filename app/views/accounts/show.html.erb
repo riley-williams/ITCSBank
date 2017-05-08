@@ -1,14 +1,15 @@
-<h1><%= @account.name %></h1>
-
-<h2>Description:</h2>
-<p><%= @account.description %></p>
-
-<div>
-    <ul class="account-actions">
-        <li><%= link_to "Back", accounts_path %></li>
-        <li><%= link_to "Edit", edit_account_path(@account) %></li>
-        <li><%= link_to "Delete", account_path(@account), data: {
-            confirm: "Are you sure?"}, method: :delete %></li>
-    </ul>
+<div class="row">
+    <h1></h1>
+    <div class="col-md-4 col-md-offset-4">
+        <button class="btn btn-primary btn-lg btn-block"><%= @account.name %></button>
+        <button class="btn btn-default btn-lg btn-block"><%= @account.description %></button>
+        <h3></h3>
+            <div class = "col-md-3"></div>
+            <div class="btn-group">
+                <%= link_to 'Back', accounts_path, class: 'btn btn-info btn' %>
+                <%= link_to 'Edit', edit_account_path(@account), class: 'btn btn-info btn' %>
+                <%= link_to 'Delete', account_path(@account), method: :delete, class: 'btn btn-info btn' %>
+            </div>
+    </div>
 </div>
 

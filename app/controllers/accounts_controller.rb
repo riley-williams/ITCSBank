@@ -22,9 +22,29 @@ class AccountsController < ApplicationController
         end
     end
     
+    def edit
+        @account = current_user.accounts.find(params[:id])
+    end
+    
+    def update
+        @account = current_user.accounts.find(params[:id])
+        
+        if @account.update(account_params)
+            redirect_to @account
+        else
+            render 'edit'
+        end
+    end
+    
+    def destroy
+        @account = current_user.accounts.find(params[:id])
+        @account.destroy
+        redirect_to accounts_path
+    end
+    
     private
     def account_params
-        params.require(:account).permit(:name, :type, :amount)
+        params.require(:account).permit(:name, :description)
     end
     
 end

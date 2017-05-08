@@ -4,7 +4,7 @@
     
       <ul class="nav navbar-nav navbar-left">
         <li><a href="/accounts/new">Deposit</a></li>
-        <li><a href="#">Withdraw</a></li>
+        <li><a href="/accounts/new">Withdraw</a></li>
       </ul>
     
       <ul class="nav navbar-nav navbar-right">
@@ -35,26 +35,31 @@
        
     <thead>
       <tr>
-        <th>Name</th>
+        <th>Options</th>
         <th>Type</th>
         <th></th>
         <th></th>
-        <th></th>
-        <th></th>
         <th>Amount</th>
+        <th></th>
       </tr>
     </thead>
     
     <tbody>
       <% @accounts.each do |account| %>
         <tr>
-            <td><%= link_to account.name, account_path(account) %></td>
-            <td><%= account.type %></td>
-            <td></td>
-            <td></td>
+            <td>
+              <div class="btn-group">
+                <%= link_to ' Show ', account_path(account), class: 'btn btn-success btn-sm' %>
+                <%= link_to ' Edit ', edit_account_path(account), class: 'btn btn-success btn-sm' %>
+                <%= link_to 'Delete', account_path(account), method: :delete, class: 'btn btn-success btn-sm' %>
+              </div>
+            </td>
+            <td><%= account.name %></td>
             <td></td>
             <td></td>
             <td><%= account.description %></td>
+            <td></td>
+          
         </tr>
       <% end %>
     </tbody>
